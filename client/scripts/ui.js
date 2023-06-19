@@ -435,12 +435,12 @@ class Notifications {
         }
 
         // Notification is persistent on Android. We have to close it manually
-        const visibilitychangeHandler = () => {                             
-            if (document.visibilityState === 'visible') {    
+        const visibilitychangeHandler = () => {
+            if (document.visibilityState === 'visible') {
                 notification.close();
                 Events.off('visibilitychange', visibilitychangeHandler);
-            }                                                       
-        };                                                                                
+            }
+        };
         Events.on('visibilitychange', visibilitychangeHandler);
 
         return notification;
@@ -560,10 +560,10 @@ window.addEventListener('beforeinstallprompt', e => {
         // don't display install banner when installed
         return e.preventDefault();
     } else {
-        const btn = document.querySelector('#install')
-        btn.hidden = false;
-        btn.onclick = _ => e.prompt();
-        return e.preventDefault();
+        // const btn = document.querySelector('#install')
+        // btn.hidden = false;
+        // btn.onclick = _ => e.prompt();
+        // return e.preventDefault();
     }
 });
 
